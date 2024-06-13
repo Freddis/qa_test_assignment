@@ -38,27 +38,27 @@ const Register: NextPage = () => {
         <div className={'card'}>
             <div className="card-body">
                 <div className="mb-3">
-                    <label className="form-label">Your Name</label>
-                    <input onChange={e => setFullName(e.target.value)} className="form-control"/>
+                    <label className="form-label" data-testID="your-name-txt">Your Name</label>
+                    <input onChange={e => setFullName(e.target.value)} className="form-control" data-testID="input-your-name"/>
                     <ValidationError errors={errors} field={"fullName"}/>
                 </div>
                 <div className="mb-3">
-                    <label className="form-label">Email address</label>
-                    <input onChange={e => setEmail(e.target.value)} className="form-control"/>
+                    <label className="form-label" data-testID="email-txt">Email address</label>
+                    <input onChange={e => setEmail(e.target.value)} className="form-control" data-testID="input-email"/>
                     <div className="form-text">We&apos;ll never share your email with anyone else. Trust me, dude.</div>
                     <ValidationError errors={errors} field={"email"}/>
                 </div>
                 <div className="mb-3">
-                    <label className="form-label">Password</label>
-                    <input onChange={e => setPassword(e.target.value)} type="password" className="form-control"/>
+                    <label className="form-label" data-testID="password-txt">Password</label>
+                    <input onChange={e => setPassword(e.target.value)} type="password" className="form-control" data-testID="input-pwd"/>
                     <ValidationError errors={errors} field={"password"}/>
                 </div>
                 <div className="mb-3">
-                    <label className="form-label">Confirm Password</label>
-                    <input onChange={e => setPasswordConfirmation(e.target.value)} type="password" className="form-control"/>
+                    <label className="form-label" data-testID="confirm-password-txt">Confirm Password</label>
+                    <input onChange={e => setPasswordConfirmation(e.target.value)} type="password" className="form-control" data-testID="input-confirm-pwd"/>
                     <ValidationError errors={errors} field={"passwordConfirmation"}/>
                 </div>
-                <button onClick={register} className="btn btn-primary">Submit</button>
+                <button onClick={register} className="btn btn-primary" data-testID="submit-btn">Submit</button>
             </div>
         </div>
     </>
