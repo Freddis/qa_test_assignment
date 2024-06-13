@@ -31,7 +31,7 @@ const Home: NextPage = () => {
         setUsers(response?.users!);
     }
     if(!cookies.jwt){
-        return <div>You can&apos;t see the data on this page until you&apos;re logged in!</div>
+        return <div data-testID="pre-logged-in-msg">You can&apos;t see the data on this page until you&apos;re logged in!</div>
     }
 
     if ( users.length == 0) {
@@ -40,25 +40,25 @@ const Home: NextPage = () => {
 
     return (
         <div>
-            <table className="table">
+            <table className="table" data-testID="user-table">
                 <thead>
                 <tr>
-                    <th scope="col">#</th>
-                    <th scope="col">Name</th>
-                    <th scope="col">Email</th>
+                    <th scope="col" data-testID="col-header-id">#</th>
+                    <th scope="col" data-testID="col-header-name">Name</th>
+                    <th scope="col" data-testID="col-header-email">Email</th>
                 </tr>
                 </thead>
                 <tbody>
                 {users.map(user =>
-                    <tr key={user.id}>
-                        <td>{user.id}</td>
-                        <td>{user.fullName}</td>
-                        <td>{user.email}</td>
-                    </tr>
+                    <tr key={user.id} data-testID={`user-row-${user.id}`}>
+                    <td data-testID={`user-id-${user.id}`}>{user.id}</td>
+                    <td data-testID={`user-name-${user.id}`}>{user.fullName}</td>
+                    <td data-testID={`user-email-${user.id}`}>{user.email}</td>
+                </tr>
                 )}
                 </tbody>
             </table>
-            <b>These are visible only for those who logged in.</b>
+            <b data-testID="post-logged-in-msg">These are visible only for those who logged in.</b>
         </div>
     )
 }

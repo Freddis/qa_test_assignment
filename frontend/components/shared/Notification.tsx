@@ -14,7 +14,7 @@ const Notification = () => {
         dispatch(notificationSlice.actions.hideAlert());
     }
     return <>
-        <div className={"alert alert-" + typeStr} role="alert" onClick={close}>{notification.text}<div className={"close-icon"}>X</div></div>
+        <div className={"alert alert-" + typeStr} role="alert" onClick={close} data-testID="alert">{notification.text}<div className={"close-icon"} data-testID="error-alert-close">X</div></div>
 
     </>
 }

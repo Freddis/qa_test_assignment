@@ -35,17 +35,17 @@ const Register: NextPage = () => {
         <div className={'card'}>
             <div className="card-body">
                 <div className="mb-3">
-                    <label className="form-label">Email address</label>
-                    <input onChange={e => setEmail(e.target.value)} className="form-control"/>
+                    <label className="form-label" data-testID="email-label">Email address</label>
+                    <input onChange={e => setEmail(e.target.value)} className="form-control" data-testID="email-input"/>
                     <ValidationError errors={errors} field={"email"}/>
                 </div>
                 <div className="mb-3">
-                    <label className="form-label">Password</label>
-                    <input onChange={e => setPassword(e.target.value)} type="password" className="form-control"/>
+                    <label className="form-label" data-testID="password-label">Password</label>
+                    <input onChange={e => setPassword(e.target.value)} type="password" className="form-control" data-testID="password-input"/>
                     <ValidationError errors={errors} field={"password"}/>
                 </div>
 
-                <button onClick={login} className="btn btn-primary">Submit</button>
+                <button onClick={login} className="btn btn-primary" data-testID="submit-btn">Submit</button>
             </div>
         </div>
     </>

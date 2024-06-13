@@ -6,7 +6,7 @@ const ValidationError : React.FC<{errors: ValidationErrors, field: string}> = ({
         return null;
     }
     return <>
-        <div className={"validation-error alert-danger"} role="alert">{errors[field]}</div>
+        <div className={"validation-error alert-danger"} role="alert" data-testID={`error-${field}`}>{errors[field]}</div>
     </>
 }
 
